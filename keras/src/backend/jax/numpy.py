@@ -381,7 +381,8 @@ def ceil(x):
         dtype = config.floatx()
     else:
         dtype = dtypes.result_type(x.dtype, float)
-    return cast(jnp.ceil(x), dtype)
+    x = cast(x, dtype)
+    return jnp.ceil(x)
 
 
 def clip(x, x_min, x_max):
@@ -558,7 +559,10 @@ def flip(x, axis=None):
 def floor(x):
     x = convert_to_tensor(x)
     if standardize_dtype(x.dtype) == "int64":
-        x = cast(x, config.floatx())
+        dtype = config.floatx()
+    else:
+        dtype = dtypes.result_type(x.dtype, float)
+    x = cast(x, dtype)
     return jnp.floor(x)
 
 
@@ -872,6 +876,17 @@ def reshape(x, newshape):
 
 def roll(x, shift, axis=None):
     return jnp.roll(x, shift, axis=axis)
+
+
+def searchsorted(sorted_sequence, values, side="left"):
+    if ndim(sorted_sequence) != 1:
+        raise ValueError(
+            "`searchsorted` only supports 1-D sorted sequences. "
+            "You can use `keras.ops.vectorized_map` "
+            "to extend it to N-D sequences. Received: "
+            f"sorted_sequence.shape={sorted_sequence.shape}"
+        )
+    return jnp.searchsorted(sorted_sequence, values, side=side)
 
 
 @sparse.elementwise_unary(linear=False)
