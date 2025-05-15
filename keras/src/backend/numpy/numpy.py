@@ -310,6 +310,11 @@ def bartlett(x):
     return np.bartlett(x).astype(config.floatx())
 
 
+def hamming(x):
+    x = convert_to_tensor(x)
+    return np.hamming(x).astype(config.floatx())
+
+
 def bincount(x, weights=None, minlength=0, sparse=False):
     if sparse:
         raise ValueError("Unsupported value `sparse=True` with numpy backend")
@@ -388,6 +393,11 @@ def bitwise_right_shift(x, y):
 
 def right_shift(x, y):
     return bitwise_right_shift(x, y)
+
+
+def blackman(x):
+    x = convert_to_tensor(x)
+    return np.blackman(x).astype(config.floatx())
 
 
 def broadcast_to(x, shape):

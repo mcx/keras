@@ -36,6 +36,7 @@ from keras.src.ops.numpy import bitwise_not as bitwise_not
 from keras.src.ops.numpy import bitwise_or as bitwise_or
 from keras.src.ops.numpy import bitwise_right_shift as bitwise_right_shift
 from keras.src.ops.numpy import bitwise_xor as bitwise_xor
+from keras.src.ops.numpy import blackman as blackman
 from keras.src.ops.numpy import broadcast_to as broadcast_to
 from keras.src.ops.numpy import ceil as ceil
 from keras.src.ops.numpy import clip as clip
@@ -74,6 +75,7 @@ from keras.src.ops.numpy import full_like as full_like
 from keras.src.ops.numpy import get_item as get_item
 from keras.src.ops.numpy import greater as greater
 from keras.src.ops.numpy import greater_equal as greater_equal
+from keras.src.ops.numpy import hamming as hamming
 from keras.src.ops.numpy import histogram as histogram
 from keras.src.ops.numpy import hstack as hstack
 from keras.src.ops.numpy import identity as identity
