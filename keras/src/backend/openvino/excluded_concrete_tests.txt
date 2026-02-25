@@ -142,7 +142,6 @@ NNOpsCorrectnessTest::test_conv_transpose_
 NNOpsCorrectnessTest::test_ctc_decode
 NNOpsCorrectnessTest::test_log_softmax_correctness_with_axis_tuple
 NNOpsCorrectnessTest::test_softmax_correctness_with_axis_tuple
-NNOpsCorrectnessTest::test_separable_conv_
 NNOpsCorrectnessTest::test_glu
 NNOpsCorrectnessTest::test_moments
 NNOpsCorrectnessTest::test_normalize
